@@ -13,16 +13,19 @@
 
 ## 🎯 Overview
 
-**SkyMind AI** transforms warehouse drone operations with intelligent, autonomous coordination. By combining Google Gemini's reasoning capabilities with real-time physics simulation, we create a transparent, scalable platform for fleet management.
+**SkyMind AI** is a versatile robotics simulation and AI orchestration platform. While optimized for autonomous drone fleet coordination in warehouse operations, the platform supports multiple robotics scenarios including quadrupeds, humanoids, and manipulators.
 
 ### The Problem
-Modern warehouses deploy drone fleets for inventory inspection, but coordinating multiple autonomous agents requires centralized AI that adapts to real-time conditions like battery levels, obstacles, and mission priorities.
+Modern robotics deployments (drones, ground robots, manipulators) need centralized AI coordination that adapts to real-time conditions like battery levels, obstacles, and mission priorities. Testing these systems on real hardware is expensive and risky.
 
 ### Our Solution
-- **🤖 Gemini AI** for mission planning with explainable reasoning
-- **☁️ Vultr Backend** as central coordination layer
-- **⚙️ MuJoCo Simulation** for digital twin validation
-- **📊 Live Dashboard** showing real-time AI decisions
+- **🤖 Gemini AI** for intelligent mission planning with explainable reasoning
+- **☁️ Vultr Backend** as central coordination layer for any robot type
+- **⚙️ MuJoCo Simulation** for physics-accurate digital twin validation
+- **📊 Live Dashboard** showing real-time AI decisions and telemetry
+
+**Primary Use Case:** Autonomous warehouse drone fleet management  
+**Platform Capability:** Extensible to any MuJoCo-compatible robot
 
 ---
 
@@ -32,7 +35,11 @@ Modern warehouses deploy drone fleets for inventory inspection, but coordinating
 Every action is explained in natural language. No black box - operators understand why drones make specific choices.
 
 ### 🎮 Real-Time Physics Simulation
-Browser-based MuJoCo engine running at 60 FPS with realistic flight dynamics and PID control.
+Browser-based MuJoCo engine running at 60 FPS with multiple robotics scenarios:
+- Aerial vehicles (drones with PID control)
+- Legged robots (quadrupeds, bipeds)
+- Manipulators (robotic arms, hands)
+- Multi-agent coordination
 
 ### 📡 Cloud Coordination
 Vultr-powered backend logs all telemetry, stores mission history, and coordinates fleet operations.
@@ -46,7 +53,31 @@ Built like a real SaaS platform with REST APIs, database persistence, and scalab
 
 **[▶️ Watch Demo Video](YOUR_YOUTUBE_LINK)**
 
-**[🌐 Try Live Demo](https://mujoco-wasm.vercel.app/)**
+**[🌐 Try Live Demo](https://sky-mind-nine.vercel.app/)**
+
+### Example Scenes
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="docs/images/skydio-x2-demo.png" alt="Skydio X2 Drone" />
+      <p align="center"><strong>Skydio X2 Quadcopter</strong><br/>Autonomous drone with PID control</p>
+    </td>
+    <td width="50%">
+      <img src="docs/images/unitree-go1-demo.png" alt="Unitree GO1" />
+      <p align="center"><strong>Unitree GO1 Robot</strong><br/>Quadruped locomotion</p>
+    </td>
+  </tr>
+</table>
+
+### Available Robotics Scenarios
+
+- **🚁 Aerial Robots:** Skydio X2 drone with autonomous flight control
+- **🐕 Quadrupeds:** Boston Dynamics Spot, Unitree GO1
+- **🤖 Humanoids:** Bipedal robots, 22-humanoid crowd simulation
+- **🦾 Manipulators:** Shadow Hand, robotic arms
+- **🔬 Multi-Agent:** Combined drone + Spot coordination
+- **⚙️ Physics Demos:** Balloons, flags, adhesion, tendons
 
 ---
 
