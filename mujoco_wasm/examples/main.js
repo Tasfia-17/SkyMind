@@ -27,9 +27,12 @@ let currentKeyIndex = 0;
 let aiEnabled = true;
 let aiTarget = { x: 0, y: 0, z: 2 };
 let frameCount = 0;
+let lastAIAction = "initializing";
+let lastAIReasoning = "Starting autonomous control...";
+let aiDecisionCount = 0;
 
 async function getAIDecision(pos, battery, vel) {
-  if (!aiEnabled) return { target: aiTarget, reasoning: "AI disabled" };
+  if (!aiEnabled) return { target: aiTarget, reasoning: "AI disabled", action: "hover" };
   
   const key = GEMINI_API_KEYS[currentKeyIndex];
   currentKeyIndex = (currentKeyIndex + 1) % GEMINI_API_KEYS.length;
@@ -40,13 +43,13 @@ async function getAIDecision(pos, battery, vel) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         contents: [{
-          parts: [{ text: `Warehouse drone control.
+          parts: [{ text: `Autonomous warehouse drone control.
 Position: (${pos.x.toFixed(1)}, ${pos.y.toFixed(1)}, ${pos.z.toFixed(1)})
 Battery: ${battery.toFixed(0)}%
 Velocity: (${vel.x.toFixed(1)}, ${vel.y.toFixed(1)}, ${vel.z.toFixed(1)})
 
-Mission: Patrol area, return if battery < 20%.
-Respond JSON only: {"action":"patrol","target":{"x":2,"y":1,"z":2.5},"reasoning":"why"}` }]
+Mission: Patrol warehouse area (-3 to 3 on x/y), inspect zones, return to base (0,0,2) if battery < 20%.
+Respond JSON only: {"action":"patrol|inspect|return_base|hover","target":{"x":2,"y":1,"z":2.5},"reasoning":"brief why"}` }]
         }]
       })
     });
@@ -57,12 +60,39 @@ Respond JSON only: {"action":"patrol","target":{"x":2,"y":1,"z":2.5},"reasoning"
     const text = data.candidates[0].content.parts[0].text;
     const decision = JSON.parse(text.match(/\{[\s\S]*\}/)[0]);
     
-    console.log(`🤖 AI (Key ${currentKeyIndex}/${GEMINI_API_KEYS.length}):`, decision.reasoning);
+    aiDecisionCount++;
+    lastAIAction = decision.action;
+    lastAIReasoning = decision.reasoning;
+    
+    console.log(`🤖 AI Decision #${aiDecisionCount} (Key ${currentKeyIndex}/${GEMINI_API_KEYS.length}):`, decision.action);
+    console.log(`   Reasoning: ${decision.reasoning}`);
+    console.log(`   Target: (${decision.target.x}, ${decision.target.y}, ${decision.target.z})`);
+    
     aiTarget = decision.target;
+    updateAIDisplay();
     return decision;
   } catch (e) {
-    console.warn('AI error:', e.message);
-    return { target: aiTarget, reasoning: 'fallback' };
+    console.warn('⚠️ AI error:', e.message, '- using fallback');
+    lastAIReasoning = 'Fallback mode: ' + e.message;
+    updateAIDisplay();
+    return { target: aiTarget, reasoning: 'fallback', action: 'hover' };
+  }
+}
+
+function updateAIDisplay() {
+  const display = document.getElementById('ai-status');
+  if (display) {
+    display.innerHTML = `
+      <div style="background: rgba(0,0,0,0.8); color: #0f0; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 12px; max-width: 400px;">
+        <div style="font-size: 14px; font-weight: bold; margin-bottom: 10px; color: #00ff00;">🤖 SkyMind AI - Autonomous Control</div>
+        <div><strong>Decisions:</strong> ${aiDecisionCount}</div>
+        <div><strong>Action:</strong> <span style="color: #00ffff;">${lastAIAction}</span></div>
+        <div><strong>Target:</strong> (${aiTarget.x.toFixed(1)}, ${aiTarget.y.toFixed(1)}, ${aiTarget.z.toFixed(1)})</div>
+        <div><strong>Battery:</strong> ${Math.max(0, 100 - (frameCount / 3600) * 100).toFixed(0)}%</div>
+        <div style="margin-top: 8px; color: #ffff00;"><strong>Reasoning:</strong> ${lastAIReasoning}</div>
+        <div style="margin-top: 8px; font-size: 10px; color: #888;">Using Gemini 3 Flash • ${GEMINI_API_KEYS.length} API keys rotating</div>
+      </div>
+    `;
   }
 }
 // ============================================
