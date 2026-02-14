@@ -8,7 +8,7 @@
 [![Hackathon](https://img.shields.io/badge/Hackathon-AI%20Meets%20Robotics-orange)](https://lablab.ai/event/launch-fund-ai-meets-robotics)
 [![AI](https://img.shields.io/badge/AI-Gemini%203%20Flash-blue)](https://ai.google.dev/)
 
-![SkyMind AI Banner](./thumbnail.png)
+
 
 ---
 
