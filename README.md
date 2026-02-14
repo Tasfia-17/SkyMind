@@ -1,4 +1,4 @@
-# 🚁 SkyMind AI - Autonomous Drone Fleet Orchestrator
+#  SkyMind AI - Autonomous Drone Fleet Orchestrator
 
 > **AI-powered drone fleet with Gemini 3 Flash making real-time autonomous decisions**  
 > Built for [lablab.ai AI Meets Robotics Hackathon](https://lablab.ai/event/launch-fund-ai-meets-robotics)
@@ -13,7 +13,7 @@
 
 ---
 
-## 🎯 Overview
+##  Overview
 
 **SkyMind AI** uses **Google Gemini 3 Flash** to autonomously control drone fleets in real-time. The AI makes decisions every 2 seconds based on battery levels, position, velocity, and mission objectives - with full explainability.
 
@@ -33,27 +33,27 @@ Warehouse drone operations need intelligent coordination that adapts to real-tim
 
 ## ✨ Key Features
 
-### 🧠 Real AI Autonomy (Gemini 3 Flash)
+###  Real AI Autonomy (Gemini 3 Flash)
 - **Live decision-making** every 2 seconds based on drone state
 - **Natural language reasoning** - see why AI chooses each action
 - **Adaptive behavior** - responds to battery, position, velocity
 - **Multi-key rotation** - 3 API keys for 45 requests/min (no rate limits)
 
-### 🎮 Real-Time Physics Simulation
+###  Real-Time Physics Simulation
 Browser-based MuJoCo engine running at 60 FPS with multiple robotics scenarios:
 - Aerial vehicles (drones with PID control)
 - Legged robots (quadrupeds, bipeds)
 - Manipulators (robotic arms, hands)
 - Multi-agent coordination
 
-### 📡 Production Backend
+###  Production Backend
 Vultr-powered coordination layer:
 - Gemini API integration with automatic key rotation
 - Telemetry logging and mission history
 - RESTful API for drone-to-cloud communication
 - Fallback handling for offline scenarios
 
-### 🎯 Explainable AI
+###  Explainable AI
 Every decision includes:
 - **Action**: patrol, inspect, return_base, hover
 - **Target coordinates**: where to go next
@@ -62,7 +62,7 @@ Every decision includes:
 
 ---
 
-## 🎥 Live Demo
+##  Live Demo
 
 **[🌐 Try Live Demo](https://sky-mind-nine.vercel.app/)**
 
@@ -115,7 +115,7 @@ Open the browser console (F12) to see AI decision-making in real-time:
 
 ---
 
-## 🏗 Architecture
+##  Architecture
 
 ### Production Architecture (Scalable Deployment)
 
@@ -169,7 +169,7 @@ The `/backend/server-multi-key.js` provides enterprise-grade features designed f
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 - Node.js 20+
