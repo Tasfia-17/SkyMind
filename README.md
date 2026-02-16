@@ -1,6 +1,6 @@
-#  SkyMind AI - Autonomous Multi-Robot Fleet Orchestrator
+# SkyMind AI - Autonomous Multi-Robot Fleet Orchestrator
 
-> **AI-powered robotics fleet with Gemini 3 Flash making real-time autonomous decisions**  
+> **AI-powered robotics fleet with Gemini 3 Flash making real-time autonomous decisions** 
 > Built for [lablab.ai AI Meets Robotics Hackathon](https://lablab.ai/event/launch-fund-ai-meets-robotics)
 
 [![Demo](https://img.shields.io/badge/Demo-Live-success)](https://sky-mind-nine.vercel.app/) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Track](https://img.shields.io/badge/Track-Autonomous%20Robotics%20Control-orange)](https://lablab.ai/event/launch-fund-ai-meets-robotics)
@@ -9,7 +9,7 @@
 
 
 
-##  Problem Statement
+## Problem Statement
 
 Modern warehouse, logistics, and industrial operations need intelligent robotics coordination that:
 - Adapts to real-time conditions (battery, position, obstacles)
@@ -25,16 +25,16 @@ Modern warehouse, logistics, and industrial operations need intelligent robotics
 
 ---
 
-##  Our Solution
+## Our Solution
 
 **SkyMind AI** is a simulation-first, multi-robot orchestration platform powered by **Google Gemini 3 Flash** that provides:
 
 ### Core Innovation
-- **🤖 Real AI Autonomy** - Gemini 3 Flash makes decisions every 2 seconds based on robot state
-- **🔄 Multi-Robot Support** - Unified control for drones, quadrupeds, humanoids, and manipulators
-- **☁️ Vultr Backend** - Production-ready coordination layer for fleet management
-- **⚙️ MuJoCo Physics** - Accurate simulation with 60 FPS real-time performance
-- **📊 Explainable AI** - Natural language reasoning for every decision
+- ** Real AI Autonomy** - Gemini 3 Flash makes decisions every 2 seconds based on robot state
+- ** Multi-Robot Support** - Unified control for drones, quadrupeds, humanoids, and manipulators
+- ** Vultr Backend** - Production-ready coordination layer for fleet management
+- ** MuJoCo Physics** - Accurate simulation with 60 FPS real-time performance
+- ** Explainable AI** - Natural language reasoning for every decision
 
 ### Key Differentiators
 1. **Transparent AI reasoning** - Operators understand why robots make each decision
@@ -44,11 +44,11 @@ Modern warehouse, logistics, and industrial operations need intelligent robotics
 
 ---
 
-##  Supported Robot Types
+## Supported Robot Types
 
 SkyMind AI provides a comprehensive robotics simulation platform with **7 robot categories** and **15+ robot models**:
 
-### 1. 🚁 Aerial Robots (Drones)
+### 1. Aerial Robots (Drones)
 **Skydio X2 Quadcopter**
 - Autonomous flight control with PID controllers
 - Real-time battery monitoring and return-to-base logic
@@ -59,7 +59,7 @@ SkyMind AI provides a comprehensive robotics simulation platform with **7 robot 
 
 ---
 
-### 2. 🐕 Quadruped Robots (Ground Mobility)
+### 2. Quadruped Robots (Ground Mobility)
 
 **Boston Dynamics Spot**
 - 4-legged locomotion with dynamic balance
@@ -77,7 +77,7 @@ SkyMind AI provides a comprehensive robotics simulation platform with **7 robot 
 
 ---
 
-### 3. 🤖 Humanoid Robots (Bipedal Locomotion)
+### 3. Humanoid Robots (Bipedal Locomotion)
 
 **Single Humanoid**
 - Bipedal walking and balance control
@@ -101,7 +101,7 @@ SkyMind AI provides a comprehensive robotics simulation platform with **7 robot 
 
 ---
 
-### 4.  Manipulators (Robotic Arms & Hands)
+### 4. Manipulators (Robotic Arms & Hands)
 
 **Shadow Hand**
 - 24 degrees of freedom
@@ -119,7 +119,7 @@ SkyMind AI provides a comprehensive robotics simulation platform with **7 robot 
 
 ---
 
-### 5. 🔄 Multi-Agent Systems
+### 5. Multi-Agent Systems
 
 **Combined Drone + Spot**
 - Aerial and ground robot coordination
@@ -131,7 +131,7 @@ SkyMind AI provides a comprehensive robotics simulation platform with **7 robot 
 
 ---
 
-### 6. ⚙️ Physics & Research Demos
+### 6. Physics & Research Demos
 
 **Advanced Physics Simulations:**
 - **Balloons** - Soft body dynamics and air resistance
@@ -144,7 +144,7 @@ SkyMind AI provides a comprehensive robotics simulation platform with **7 robot 
 
 ---
 
-### 7. 🎯 Specialized Scenarios
+### 7. Specialized Scenarios
 
 **Mug Manipulation**
 - Object grasping and placement
@@ -158,50 +158,50 @@ SkyMind AI provides a comprehensive robotics simulation platform with **7 robot 
 
 ---
 
-## 🏗 Architecture
+## Architecture
 
 ### Production-Ready Stack
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│                    OPERATOR DASHBOARD                     │
-│         (Web UI - Real-time Fleet Monitoring)            │
+│ OPERATOR DASHBOARD │
+│ (Web UI - Real-time Fleet Monitoring) │
 └────────────────────┬─────────────────────────────────────┘
-                     │ HTTPS/WebSocket
-                     ▼
+ │ HTTPS/WebSocket
+ ▼
 ┌──────────────────────────────────────────────────────────┐
-│              VULTR BACKEND (Node.js + Express)           │
-│  • Multi-API Key Rotation (3 Gemini Keys)                │
-│  • Telemetry Logging & Mission History                   │
-│  • Fleet Coordination & Task Scheduling                  │
-│  • RESTful API + WebSocket for Real-time Updates         │
+│ VULTR BACKEND (Node.js + Express) │
+│ • Multi-API Key Rotation (3 Gemini Keys) │
+│ • Telemetry Logging & Mission History │
+│ • Fleet Coordination & Task Scheduling │
+│ • RESTful API + WebSocket for Real-time Updates │
 └────────────────────┬─────────────────────────────────────┘
-                     │ Gemini API Calls
-                     ▼
+ │ Gemini API Calls
+ ▼
 ┌──────────────────────────────────────────────────────────┐
-│           GOOGLE GEMINI 3 FLASH (AI Brain)               │
-│  • Analyzes: position, battery, velocity, mission state  │
-│  • Returns: action + target + natural language reasoning │
-│  • Decision frequency: Every 2 seconds                   │
+│ GOOGLE GEMINI 3 FLASH (AI Brain) │
+│ • Analyzes: position, battery, velocity, mission state │
+│ • Returns: action + target + natural language reasoning │
+│ • Decision frequency: Every 2 seconds │
 └────────────────────┬─────────────────────────────────────┘
-                     │ AI Decisions
-                     ▼
+ │ AI Decisions
+ ▼
 ┌──────────────────────────────────────────────────────────┐
-│         MUJOCO WASM SIMULATION (Browser-based)           │
-│  • 60 FPS physics simulation                             │
-│  • PID controllers apply AI targets                      │
-│  • Real-time sensor data generation                      │
-│  • Multi-robot coordination                              │
+│ MUJOCO WASM SIMULATION (Browser-based) │
+│ • 60 FPS physics simulation │
+│ • PID controllers apply AI targets │
+│ • Real-time sensor data generation │
+│ • Multi-robot coordination │
 └──────────────────────────────────────────────────────────┘
 ```
 
 ### Technology Stack
 
 **Required (Competition):**
-- ✅ **Vultr** - Backend VM deployment for fleet coordination
-- ✅ **Gemini 3 Flash** - AI decision engine with multi-key rotation
-- ✅ **Web-based** - Browser-accessible simulation and dashboard
-- ✅ **Simulation-first** - MuJoCo physics engine
+- **Vultr** - Backend VM deployment for fleet coordination
+- **Gemini 3 Flash** - AI decision engine with multi-key rotation
+- **Web-based** - Browser-accessible simulation and dashboard
+- **Simulation-first** - MuJoCo physics engine
 
 **Additional Technologies:**
 - **MuJoCo WASM** - Physics simulation (60 FPS)
@@ -211,7 +211,7 @@ SkyMind AI provides a comprehensive robotics simulation platform with **7 robot 
 
 ---
 
-##  Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js 20+
@@ -242,9 +242,9 @@ python -m http.server 8000
 Open http://localhost:8000 and press F12 to see AI decisions in console:
 
 ```
-🤖 AI Decision #1 (Key 1/3): patrol
-   Reasoning: Battery sufficient, continuing patrol route
-   Target: (2.5, 1.5, 2.8)
+ AI Decision #1 (Key 1/3): patrol
+ Reasoning: Battery sufficient, continuing patrol route
+ Target: (2.5, 1.5, 2.8)
 ```
 
 ### 4. Deploy Backend to Vultr
@@ -267,7 +267,7 @@ node backend/server-multi-key.js
 
 ---
 
-## 🎮 How to Use
+## How to Use
 
 ### Simulation Controls
 
@@ -299,7 +299,7 @@ Open the simulation and select from the dropdown:
 
 ---
 
-## 📡 API Documentation
+## API Documentation
 
 ### Gemini AI Decision Endpoint
 
@@ -310,18 +310,18 @@ POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-prev
 
 Body:
 {
-  "contents": [{
-    "parts": [{ 
-      "text": "Robot at (1.5, 2.0, 3.0), battery 85%, velocity (0.1, 0, 0). Respond JSON: {\"action\":\"patrol\",\"target\":{\"x\":2,\"y\":1,\"z\":2.5},\"reasoning\":\"why\"}"
-    }]
-  }]
+ "contents": [{
+ "parts": [{ 
+ "text": "Robot at (1.5, 2.0, 3.0), battery 85%, velocity (0.1, 0, 0). Respond JSON: {\"action\":\"patrol\",\"target\":{\"x\":2,\"y\":1,\"z\":2.5},\"reasoning\":\"why\"}"
+ }]
+ }]
 }
 
 Response:
 {
-  "action": "patrol",
-  "target": {"x": 2.5, "y": 1.5, "z": 2.8},
-  "reasoning": "Battery sufficient, continuing patrol route"
+ "action": "patrol",
+ "target": {"x": 2.5, "y": 1.5, "z": 2.8},
+ "reasoning": "Battery sufficient, continuing patrol route"
 }
 ```
 
@@ -331,27 +331,27 @@ Response:
 
 ```bash
 curl -X POST http://YOUR_VULTR_IP:3000/mission \
-  -H "Content-Type: application/json" \
-  -d '{
-    "robot_type": "drone",
-    "position": {"x": 1.5, "y": 2.0, "z": 3.0},
-    "battery": 85,
-    "velocity": {"x": 0.1, "y": 0, "z": 0}
-  }'
+ -H "Content-Type: application/json" \
+ -d '{
+ "robot_type": "drone",
+ "position": {"x": 1.5, "y": 2.0, "z": 3.0},
+ "battery": 85,
+ "velocity": {"x": 0.1, "y": 0, "z": 0}
+ }'
 ```
 
 **POST /telemetry** - Log robot state
 
 ```bash
 curl -X POST http://YOUR_VULTR_IP:3000/telemetry \
-  -H "Content-Type: application/json" \
-  -d '{
-    "robot_id": "drone_1",
-    "robot_type": "skydio_x2",
-    "position": {"x": 1.5, "y": 2.0, "z": 3.0},
-    "battery": 85,
-    "status": "active"
-  }'
+ -H "Content-Type: application/json" \
+ -d '{
+ "robot_id": "drone_1",
+ "robot_type": "skydio_x2",
+ "position": {"x": 1.5, "y": 2.0, "z": 3.0},
+ "battery": 85,
+ "status": "active"
+ }'
 ```
 
 **GET /health** - Check backend status
@@ -362,17 +362,17 @@ curl http://YOUR_VULTR_IP:3000/health
 
 ---
 
-## 🏆 Competition Alignment
+## Competition Alignment
 
-### Track 1: Autonomous Robotics Control ✅
+### Track 1: Autonomous Robotics Control 
 
 **Requirement:** Build an AI system that controls a robot operating fully within a simulated environment.
 
 **Our Implementation:**
-- ✅ Gemini 3 Flash makes real decisions every 2 seconds
-- ✅ Not scripted - adapts to battery, position, velocity in real-time
-- ✅ Completes objectives without manual intervention (patrol, inspect, return to base)
-- ✅ Robust, adaptable behavior across multiple robot types
+- Gemini 3 Flash makes real decisions every 2 seconds
+- Not scripted - adapts to battery, position, velocity in real-time
+- Completes objectives without manual intervention (patrol, inspect, return to base)
+- Robust, adaptable behavior across multiple robot types
 
 **Demonstration:**
 - Drone autonomously patrols warehouse area
@@ -382,28 +382,28 @@ curl http://YOUR_VULTR_IP:3000/health
 
 ---
 
-### Required Technologies ✅
+### Required Technologies 
 
-**✅ Vultr Backend**
+** Vultr Backend**
 - Production-ready Node.js backend deployed on Vultr VM
 - Central coordination layer for fleet management
 - Telemetry logging and mission history
 - RESTful API for robot-to-cloud communication
 - File: `/backend/server-multi-key.js`
 
-**✅ Gemini AI**
+** Gemini AI**
 - Core decision engine using Gemini 3 Flash
 - Multi-API key rotation (3 keys for 45 req/min)
 - Natural language reasoning for explainability
 - Real-time adaptation to robot state
 
-**✅ Simulation**
+** Simulation**
 - MuJoCo physics engine with accurate dynamics
 - 60 FPS real-time performance
 - 15+ robot models across 7 categories
 - Browser-based for instant accessibility
 
-**✅ Web-based**
+** Web-based**
 - Live demo: https://sky-mind-nine.vercel.app/
 - No installation required
 - Real-time AI decision visualization
@@ -411,7 +411,7 @@ curl http://YOUR_VULTR_IP:3000/health
 
 ---
 
-## 💼 Business Value
+## Business Value
 
 ### Target Market
 - **Warehouse automation** - $30B market by 2026
@@ -440,56 +440,56 @@ curl http://YOUR_VULTR_IP:3000/health
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 SkyMind/
-├── mujoco_wasm/                    # MuJoCo simulation
-│   ├── examples/
-│   │   ├── main.js                 # Main simulation with AI integration
-│   │   ├── scenes/
-│   │   │   ├── skydio_x2/          # Drone simulation
-│   │   │   ├── boston_dynamics_spot/  # Spot quadruped
-│   │   │   ├── unitree_go1/        # GO1 quadruped
-│   │   │   ├── combined_drone_spot/   # Multi-agent
-│   │   │   ├── shadow_hand/        # Dexterous manipulator
-│   │   │   ├── agility_cassie/     # Bipedal robot
-│   │   │   ├── humanoid.xml        # Single humanoid
-│   │   │   ├── 22_humanoids.xml    # Crowd simulation
-│   │   │   └── ...                 # More scenarios
-│   │   └── controllers/            # PID and control systems
-│   └── src/                        # WASM source
+├── mujoco_wasm/ # MuJoCo simulation
+│ ├── examples/
+│ │ ├── main.js # Main simulation with AI integration
+│ │ ├── scenes/
+│ │ │ ├── skydio_x2/ # Drone simulation
+│ │ │ ├── boston_dynamics_spot/ # Spot quadruped
+│ │ │ ├── unitree_go1/ # GO1 quadruped
+│ │ │ ├── combined_drone_spot/ # Multi-agent
+│ │ │ ├── shadow_hand/ # Dexterous manipulator
+│ │ │ ├── agility_cassie/ # Bipedal robot
+│ │ │ ├── humanoid.xml # Single humanoid
+│ │ │ ├── 22_humanoids.xml # Crowd simulation
+│ │ │ └── ... # More scenarios
+│ │ └── controllers/ # PID and control systems
+│ └── src/ # WASM source
 │
-├── backend/                        # Vultr backend
-│   ├── server-multi-key.js         # Multi-API key backend ⭐
-│   ├── package.json
-│   └── README.md
+├── backend/ # Vultr backend
+│ ├── server-multi-key.js # Multi-API key backend 
+│ ├── package.json
+│ └── README.md
 │
-├── frontend/                       # Dashboard UI
-│   └── skymind-ai/
-│       ├── dashboard.html          # Fleet monitoring dashboard
-│       └── skymind-ai.js           # AI integration module
+├── frontend/ # Dashboard UI
+│ └── skymind-ai/
+│ ├── dashboard.html # Fleet monitoring dashboard
+│ └── skymind-ai.js # AI integration module
 │
-├── docs/                           # Documentation
-│   ├── HACKATHON_SUBMISSION_GUIDE.md
-│   └── QUICK_REFERENCE.txt
+├── docs/ # Documentation
+│ ├── HACKATHON_SUBMISSION_GUIDE.md
+│ └── QUICK_REFERENCE.txt
 │
-└── README.md                       # This file
+└── README.md # This file
 ```
 
 ---
 
-## 🎯 Key Innovation: Explainable AI
+## Key Innovation: Explainable AI
 
 Every AI decision includes:
 
 ```json
 {
-  "action": "patrol",
-  "target": {"x": 2.5, "y": 1.5, "z": 2.8},
-  "reasoning": "Battery at 85%, continuing patrol route. Position stable, velocity nominal. Next waypoint is inspection zone B.",
-  "confidence": 0.95,
-  "timestamp": "2026-02-15T05:08:16Z"
+ "action": "patrol",
+ "target": {"x": 2.5, "y": 1.5, "z": 2.8},
+ "reasoning": "Battery at 85%, continuing patrol route. Position stable, velocity nominal. Next waypoint is inspection zone B.",
+ "confidence": 0.95,
+ "timestamp": "2026-02-15T05:08:16Z"
 }
 ```
 
@@ -501,13 +501,13 @@ Every AI decision includes:
 
 ---
 
-## 📈 Future Roadmap
+## Future Roadmap
 
 **Phase 1 (Current):**
-- ✅ Multi-robot simulation platform
-- ✅ Gemini 3 Flash AI integration
-- ✅ Vultr backend deployment
-- ✅ Real-time explainability
+- Multi-robot simulation platform
+- Gemini 3 Flash AI integration
+- Vultr backend deployment
+- Real-time explainability
 
 **Phase 2 (Next 3 months):**
 - Multi-robot collision avoidance
@@ -523,7 +523,7 @@ Every AI decision includes:
 
 ---
 
-## 📄 License
+## License
 
 MIT License - See [LICENSE](LICENSE) for details.
 
@@ -534,7 +534,7 @@ MIT License - See [LICENSE](LICENSE) for details.
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **lablab.ai** - Hackathon organizers
 - **Google DeepMind** - Gemini AI and MuJoCo
@@ -543,16 +543,16 @@ MIT License - See [LICENSE](LICENSE) for details.
 
 ---
 
-## 📞 Links
+## Links
 
-- **🌐 Live Demo:** https://sky-mind-nine.vercel.app/
+- ** Live Demo:** https://sky-mind-nine.vercel.app/
 - **💻 GitHub:** https://github.com/Tasfia-17/SkyMind
-- **🏆 Hackathon:** https://lablab.ai/event/launch-fund-ai-meets-robotics
-- **🤖 Gemini AI:** https://ai.google.dev/
-- **☁️ Vultr Cloud:** https://www.vultr.com/
+- ** Hackathon:** https://lablab.ai/event/launch-fund-ai-meets-robotics
+- ** Gemini AI:** https://ai.google.dev/
+- ** Vultr Cloud:** https://www.vultr.com/
 
 
-## 👥 Team
+## Team
 
 Built by [@Tasfia-17](https://github.com/Tasfia-17)
 
